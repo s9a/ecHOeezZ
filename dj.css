@@ -1,0 +1,51 @@
+:root {
+  --samp: 30deg;
+  --woof: #330330;
+}
+
+::selection {
+  background: plum;
+  color: indigo;
+}
+
+:not(:active) {
+  opacity: 0.909;
+  transition: opacity 33ms ease-in-out;
+}
+
+:focus,
+:active {
+  opacity: 1;
+}
+
+:any-link {
+  color: thistle;
+  transition-property: background-color color filter opacity;
+}
+
+html {
+  background: indigo;
+  color: plum;
+  transition: 30ms;
+}
+
+samp,
+mark {
+  background: magenta;
+  color: var(--woof);
+}
+
+samp {
+  filter: hue-rotate(var(--samp));
+}
+
+@media (prefers-contrast: more) {
+  :root {
+    background: var(--woof);
+    color: thistle;
+  }
+
+  :any-link {
+    color: lavender;
+  }
+}
